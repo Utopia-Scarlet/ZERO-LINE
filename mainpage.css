@@ -2107,6 +2107,20 @@ html {
 
     }
 
+     .season-card {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+        min-height: 560px;
+    }
+
+    .season-card-image {
+        width: calc(100% - 28px);
+        max-width: calc(100% - 28px);
+    }
+
+
 
     .season-title-block {
 
@@ -2142,6 +2156,84 @@ html {
 
 }
 
+
+@media(max-width: 600px) {
+
+    .season-card {
+        min-height: 520px;
+    }
+
+
+    .season-card-image {
+        margin:
+            10px 10px 0;
+
+        width:
+            calc(100% - 20px);
+
+        max-width:
+            calc(100% - 20px);
+    }
+
+
+    .season-card-content {
+        padding:
+            8px 20px 24px;
+    }
+
+
+    .season-card-content h3 {
+        font-size:
+            25px;
+    }
+
+
+    .season-card-content p {
+        font-size:
+            11px;
+
+        line-height:
+            1.65;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .hero-content {
+        /* Balance the taller action area without lifting the heading. */
+        padding-top: clamp(38px, 7.3svh, 70px);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 24px;
+
+        width: min(
+            240px,
+            100%
+        );
+
+        margin-top:
+            clamp(48px, 8.4svh, 80px);
+    }
+
+
+    .hero-buttons .play-button,
+    .hero-buttons .secondary-button {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 44px;
+
+        padding: 0 22px;
+    }
+
+}
 
 /* =========================================================
    PAGE 03 — HERO SHOWCASE
@@ -4656,3 +4748,94 @@ html {
     }
 
 }
+
+@media(max-width: 600px) {
+
+    .header-inner {
+        height:
+            72px;
+
+        padding:
+            0 18px;
+    }
+
+
+    .game-logo {
+        font-size:
+            18px;
+
+        gap:
+            5px;
+    }
+
+
+    .header-actions {
+        gap:
+            8px;
+    }
+
+
+    .icon-button {
+        width:
+            42px;
+
+        height:
+            42px;
+    }
+
+
+    .icon-button {
+        font-size:
+            27px;
+    }
+
+}
+
+/* Mobile navigation stays visible and scrolls horizontally. */
+.mobile-top-nav { display: none; }
+.section { scroll-margin-top: var(--header-height, 86px); }
+
+@media (max-width: 1000px) {
+    .site-header { background: rgba(24, 29, 26, .96); }
+    .mobile-top-nav {
+        display: flex;
+        width: 100%;
+        gap: 4px;
+        padding: 0 18px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        scrollbar-color: var(--brand-green-light) transparent;
+        border-top: 1px solid rgba(241, 238, 229, .08);
+        border-bottom: 1px solid var(--border);
+    }
+    .mobile-top-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex: 0 0 auto;
+        min-height: 48px;
+        padding: 0 18px;
+        color: var(--text-soft, #b9c3b9);
+        font: 600 13px "Rajdhani", sans-serif;
+        letter-spacing: 1.4px;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: color .18s, background .18s;
+    }
+    .mobile-top-link span { color: var(--gold); font-size: 10px; }
+    .mobile-top-link.active { color: var(--text-bright); background: rgba(130, 167, 141, .1); }
+    .mobile-top-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        right: 16px;
+        height: 2px;
+        background: var(--brand-green-light);
+    }
+    .mobile-top-link:focus-visible { outline: 2px solid var(--brand-green-light); outline-offset: -3px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

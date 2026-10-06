@@ -35,51 +35,27 @@ const pageDots =
     document.querySelectorAll(".page-dot");
 
 const navLinks =
-    document.querySelectorAll(".nav-link");
+    document.querySelectorAll(".nav-link, .mobile-top-link");
 
 
-const sectionObserver =
-    new IntersectionObserver(
-
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (
-                    entry.isIntersecting &&
-                    entry.intersectionRatio > 0.45
-                ) {
-
-                    const id =
-                        entry.target.id;
-
-
-                    updatePagination(id);
-
-                    updateNavigation(id);
-
-                }
-
-            });
-
-        },
-
-        {
-
-            threshold:
-                [0.45, 0.6, 0.75]
-
-        }
-
-    );
-
-
-sections.forEach(section => {
-
-    sectionObserver.observe(section);
-
-});
-
+// Track the section at the reading line, including sections taller than the viewport.
+let sectionFrame = 0;
+function syncCurrentSection() {
+    sectionFrame = 0;
+    const readingLine = header.getBoundingClientRect().height + 40;
+    let current = sections[0];
+    sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= readingLine) current = section;
+    });
+    if (current) { updatePagination(current.id); updateNavigation(current.id); }
+}
+window.addEventListener("scroll", () => {
+    if (!sectionFrame) sectionFrame = requestAnimationFrame(syncCurrentSection);
+}, { passive: true });
+new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--header-height", `${header.offsetHeight + 12}px`);
+    syncCurrentSection();
+}).observe(header);
 
 function updatePagination(sectionId) {
 
@@ -102,26 +78,19 @@ function updatePagination(sectionId) {
 
 
 function updateNavigation(sectionId) {
-
     navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        const href =
-            link.getAttribute("href");
-
-        if (
-            href === `#${sectionId}`
-        ) {
-
-            link.classList.add("active");
-
+        const active = link.getAttribute("href") === `#${sectionId}`;
+        const changed = active && !link.classList.contains("active");
+        link.classList.toggle("active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+        if (changed && link.classList.contains("mobile-top-link")) {
+            const nav = link.parentElement;
+            nav.scrollTo({ left: link.offsetLeft - nav.clientWidth / 2 + link.offsetWidth / 2,
+                behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
         }
-
     });
-
 }
-
 
 /* =========================================================
    PAGE DOT CLICK
@@ -965,3 +934,5 @@ setTimeout(
     triggerHeroGlitch,
     2200
 );
+
+
