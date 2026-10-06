@@ -565,7 +565,7 @@ html {
     margin: auto;
 
     padding:
-        140px 0;
+        70px 0;
 
 }
 
@@ -1461,39 +1461,120 @@ html {
 
 
 /* =========================================================
-   PAGE 02 — UPDATE
+   PAGE 02 — SEASON UPDATE
 ========================================================= */
 
 .updates-section {
 
-    background: #29302D;
+    position: relative;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(93, 125, 108, 0.08),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #252D29 0%,
+            #1D2421 55%,
+            #161B19 100%
+        );
 
 }
 
 
-.section-heading {
+/* PAGE 02 单独增加顶部距离 */
+
+.updates-section .section-container {
+
+    width: 90%;
+
+    max-width: 1450px;
+
+    padding:
+        115px 0 90px;
+
+}
+
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.updates-section .section-heading {
 
     margin-bottom:
-        70px;
+        45px;
 
 }
 
 
-.section-heading h2 {
+.updates-section .section-heading h2 {
+    font-family:
+        "Oxanium",
+        sans-serif;
 
     font-size:
-        clamp(50px, 6vw, 90px);
+        clamp(68px, 7vw, 108px);
 
-    font-weight:
-        300;
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: 8px;
+
+    color:
+        var(--text-bright);
+
+    transform:
+        skewX(-3deg);
+
 
 }
 
 
+/*
+    不再让 UPDATE 整个变绿
+*/
+
+.updates-section
 .section-heading h2 span {
 
     color:
-        var(--red);
+        var(--text-bright);
+
+    font-weight:
+        700;
+
+}
+
+
+/*
+    用一小条绿色作为品牌强调
+*/
+
+.updates-section
+.section-heading h2::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 10px;
+
+    height: 10px;
+
+    margin-left: 12px;
+
+    background:
+        var(--brand-green-light);
+
+    transform:
+        rotate(45deg);
 
 }
 
@@ -1501,13 +1582,16 @@ html {
 .heading-description {
 
     max-width:
-        550px;
+        590px;
 
     margin-top:
-        18px;
+        22px;
 
     color:
-        var(--grey);
+        rgba(241, 238, 229, 0.62);
+
+    font-size:
+        14px;
 
     line-height:
         1.8;
@@ -1515,83 +1599,351 @@ html {
 }
 
 
-.update-layout {
 
-    display:
-        grid;
+/* =========================================================
+   SEASON 18 TITLE ART
+========================================================= */
 
-    grid-template-columns:
-        1.3fr 1fr;
+.season-title-block {
 
-    gap:
-        60px;
+    position: relative;
 
-}
+    display: flex;
 
-
-.featured-update {
-
-    background:
-        #111318;
-
-    border:
-        1px solid var(--border);
-
-}
-
-
-.update-image {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(71, 122, 99, 0.32),
-            transparent
-        ),
-
-        #3A433E;
-
-}
-
-.update-image span {
-
-    font-size:
-        60px;
-
-    font-weight:
-        200;
-
-    letter-spacing:
-        5px;
-
-    color:
-        rgba(255,255,255,0.15);
-
-}
-
-
-.update-content {
-
-    padding:
-        35px;
-
-}
-
-
-.update-meta {
-
-    display:
-        flex;
+    align-items: flex-end;
 
     justify-content:
         space-between;
 
+    margin-bottom:
+        36px;
+
+    padding-bottom:
+        25px;
+
+    border-bottom:
+        1px solid
+        rgba(241, 238, 229, 0.14);
+
+}
+
+
+.season-title-image {
+
+    display: block;
+
+    width:
+        clamp(
+            420px,
+            45vw,
+            720px
+        );
+
+    height: auto;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 12px 25px
+            rgba(0, 0, 0, 0.18)
+        );
+
+}
+
+
+.season-title-line {
+
+    width:
+        110px;
+
+    height:
+        1px;
+
+    margin-bottom:
+        11px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--brand-green-light),
+            transparent
+        );
+
+}
+
+
+
+/* =========================================================
+   EVENT GRID
+========================================================= */
+
+.season-card-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        22px;
+
+}
+
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.season-card {
+
+    position: relative;
+
+    min-width: 0;
+    width: 450px;
+    height: 600px;
+
+    overflow: hidden;
+
+    background:
+        rgba(11, 15, 13, 0.86);
+
+    border:
+        1px solid
+        rgba(142, 181, 159, 0.34);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.season-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(142, 181, 159, 0.68);
+
+    box-shadow:
+        0 14px 35px
+        rgba(0, 0, 0, 0.22);
+
+}
+
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.season-card-image {
+
+    position: relative;
+
+    width:
+        calc(100% - 28px);
+
+    margin:
+        14px 14px 0;
+
+    aspect-ratio:
+        16 / 10;
+
+    overflow: hidden;
+
+    border:
+    1px solid
+    rgba(221, 205, 168, 0.42);
+
+}
+
+
+.season-card-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        filter 0.4s ease;
+
+}
+
+
+.season-card:hover
+.season-card-image {
+
+    border-color:
+        rgba(221, 205, 168, 0.72);
+
+}
+
+
+/*
+    图片下方暗渐变，
+    让它自然接到 Card 内容
+*/
+
+.season-card-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 11, 10, 0.04) 35%,
+            rgba(8, 11, 10, 0.15) 62%,
+            rgba(11, 15, 13, 0.94) 100%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.season-card-index {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 22px;
+
+    z-index: 3;
+
     color:
-        var(--gold);
+        #F3F0E8;
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+
+/* =========================================================
+   CARD TYPE
+========================================================= */
+
+.season-card-type {
+
+    position: absolute;
+
+    top: 22px;
+
+    left: 70px;
+
+    z-index: 3;
+
+    color:
+        var(--gold-light);
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
 
     font-size:
         10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2.7px;
+
+}
+
+
+
+/* =========================================================
+   FEATURED / BRIGHT CARD
+========================================================= */
+
+/*
+    第二张 Black Sector
+    故意做得比另外两张亮
+*/
+
+.season-card-featured
+.season-card-image img {
+
+    filter:
+        brightness(1.10)
+        saturate(1.10);
+
+}
+
+
+.season-card-featured {
+
+    border-color:
+        rgba(169, 207, 187, 0.55);
+
+}
+
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.season-card-content {
+
+    position: relative;
+
+    padding:
+        8px 28px 30px;
+
+}
+
+
+.season-card-date {
+
+    margin-bottom:
+        16px;
+
+    color:
+        rgba(221, 205, 168, 0.74);
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
 
     letter-spacing:
         2px;
@@ -1599,21 +1951,84 @@ html {
 }
 
 
-.update-content h3 {
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.season-card-content h3 {
+
+    margin: 0;
+
+    color:
+        #E9E1D2;
+
+    /*
+        这里故意不用 Oxanium，
+        让 News 页面和主 UI 有一点 editorial 反差
+    */
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:
-        34px;
+        clamp(
+            25px,
+            2vw,
+            34px
+        );
 
-    margin:
-        20px 0;
+    font-weight:
+        400;
+
+    line-height:
+        1.1;
+
+    letter-spacing:
+        0.2px;
 
 }
 
 
-.update-content p {
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.season-card-divider {
+
+    width:
+        34px;
+
+    height:
+        1px;
+
+    margin:
+        18px 0;
+
+    background:
+        var(--brand-green-light);
+
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.season-card-content p {
+
+    min-height:
+        48px;
 
     color:
-        var(--grey);
+        rgba(241, 238, 229, 0.65);
+
+    font-size:
+        12px;
 
     line-height:
         1.7;
@@ -1621,128 +2036,109 @@ html {
 }
 
 
-.text-link {
 
-    margin-top:
-        30px;
+/* =========================================================
+   LINK
+========================================================= */
 
-    border:
-        none;
-
-    background:
-        transparent;
-
-    color:
-        white;
-
-    letter-spacing:
-        2px;
-
-    cursor:
-        pointer;
-
-}
-
-
-.update-list {
-
-    border-top:
-        1px solid var(--border);
-
-}
-
-
-.update-card {
+.season-card-link {
 
     display:
-        grid;
+        inline-flex;
 
-    grid-template-columns:
-        55px 1fr 30px;
+    align-items:
+        center;
 
     gap:
-        20px;
+        18px;
 
-    padding:
-        35px 10px;
-
-    border-bottom:
-        1px solid var(--border);
-
-    transition:
-        0.3s;
-
-    cursor:
-        pointer;
-
-}
-
-
-.update-card:hover {
-
-    background:
-        rgba(255,255,255,0.025);
-
-    padding-left:
-        20px;
-
-}
-
-
-.update-number {
+    margin-top:
+        25px;
 
     color:
-        var(--gold);
+        var(--text-bright);
+
+    text-decoration:
+        none;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
 
     font-size:
-        11px;
+        12px;
 
-}
-
-
-.card-category {
-
-    color:
-        var(--red);
-
-    font-size:
-        9px;
+    font-weight:
+        700;
 
     letter-spacing:
-        2px;
+        2.3px;
 
 }
 
 
-.update-card h4 {
+.season-card-link span {
 
-    font-size:
-        21px;
-
-    margin:
-        8px 0 12px;
+    transition:
+        transform 0.25s ease;
 
 }
 
 
-.update-card p {
+.season-card-link:hover span {
 
-    color:
-        var(--grey);
-
-    font-size:
-        13px;
-
-    line-height:
-        1.6;
+    transform:
+        translateX(6px);
 
 }
 
 
-.card-arrow {
 
-    color:
-        var(--grey);
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 1000px) {
+
+    .season-card-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .season-title-block {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            20px;
+
+    }
+
+
+    .season-title-image {
+
+        width:
+            min(
+                100%,
+                620px
+            );
+
+    }
+
+
+    .season-title-line {
+
+        width:
+            80px;
+
+    }
 
 }
 
@@ -1797,31 +2193,24 @@ html {
 
 
 .hero-showcase {
+    position: relative;
 
-    position:
-        relative;
+    width: 84%;
+    height: 100vh;
 
-    width:
-        84%;
+    margin: auto;
 
-    height:
-        100vh;
-
-    margin:
-        auto;
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         1fr 0.9fr;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        80px;
+    gap: 80px;
 
+    /* 给底部英雄切换器留空间 */
+    padding-bottom: 90px;
 }
 
 
@@ -1872,6 +2261,7 @@ html {
 
     position:
         relative;
+    overflow: hidden;
 
     width:
         70%;
@@ -1895,15 +2285,14 @@ html {
             #111315 75%
         );
 
-    clip-path:
-        polygon(
-            25% 0,
-            79% 2%,
-            100% 20%,
-            88% 100%,
-            8% 100%,
-            0 23%
-        );
+    clip-path: polygon(
+        15% 0%,
+        80% 2%,
+        100% 12%,
+        88% 100%,
+        8% 100%,
+        0% 18%
+    );
 
     transition:
         opacity .35s,
@@ -1911,6 +2300,36 @@ html {
 
 }
 
+#heroImagePhoto {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.6s ease;
+}
+
+.hero-display-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10, 15, 14, 0.05) 0%,
+            rgba(10, 15, 14, 0.10) 55%,
+            rgba(10, 15, 14, 0.35) 100%
+        );
+}
 
 .hero-display-image span {
 
@@ -1981,16 +2400,27 @@ html {
 
 .hero-name-wrapper h2 {
 
+    
+    font-family:
+        "Oxanium",
+        sans-serif;
+
     font-size:
-        clamp(60px, 7vw, 110px);
+        clamp(68px, 7vw, 108px);
 
-    font-weight:
-        300;
+    font-weight: 500;
 
-    margin:
-        8px 0 25px;
+    line-height: 0.9;
 
+    letter-spacing: 8px;
+
+    color:
+        var(--text-bright);
+
+    transform:
+        skewX(-3deg);
 }
+
 
 
 .hero-lore {
@@ -2174,121 +2604,769 @@ html {
    PAGE 04 — STORE
 ========================================================= */
 
+
+
+/* =========================================================
+   PAGE 04 — STORE
+========================================================= */
+
 .store-section {
 
-    display:
-        flex;
+    position: relative;
 
-    align-items:
-        center;
+    min-height: 100vh;
 
-    justify-content:
-        center;
+    background:
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(85, 126, 105, 0.10),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            120deg,
+            #202522,
+            #2B312E
+        );
+
+    overflow: hidden;
 
 }
 
 
-.store-background {
 
-    
+/* =========================================================
+   BACKGROUND NUMBER
+========================================================= */
+
+.store-background-number {
+
+    position: absolute;
+
+    left: -1%;
+    top: 5%;
+
+    font-size: 430px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color:
+        rgba(255, 255, 255, 0.018);
+
+    pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.store-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 86%;
+    max-width: 1450px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding:
+        125px 0
+        55px;
+
+}
+
+
+
+/* =========================================================
+   STORE HEADING
+========================================================= */
+
+.store-heading {
+
+    margin-bottom: 35px;
+
+}
+
+
+.store-heading .eyebrow {
+
+    margin-bottom: 12px;
+
+}
+
+
+.store-title-row {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+}
+
+
+.store-title-row h2 {
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+    font-size:
+        clamp(68px, 7vw, 108px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: 8px;
+
+    color:
+        var(--text-bright);
+
+    transform:
+        skewX(-3deg);
+}
+
+
+.store-title-row > span {
+
+    padding-bottom: 8px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        3px;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.store-heading-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 25px;
+
+    background:
+        rgba(
+            241,
+            238,
+            229,
+            0.14
+        );
+
+}
+
+
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.store-card-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+}
+
+
+
+/* =========================================================
+   STORE CARD
+========================================================= */
+
+.store-card {
+
+    position: relative;
+
+    height:
+        min(
+            590px,
+            61vh
+        );
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            241,
+            238,
+            229,
+            0.16
+        );
+
+    background:
+        #151917;
+
+    text-align: left;
+
+    color:
+        var(--white);
+
+    cursor: pointer;
+
+    font-family:
+        inherit;
+
+}
+
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.store-card-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.store-card-overlay {
+
     position: absolute;
 
     inset: 0;
 
     background:
 
-        radial-gradient(
-            circle at center,
-            rgba(125, 181, 148, 0.12),
-            transparent 42%
+        linear-gradient(
+            180deg,
+            rgba(9, 12, 10, 0.08)
+            0%,
+
+            rgba(9, 12, 10, 0.12)
+            35%,
+
+            rgba(9, 12, 10, 0.88)
+            100%
         ),
 
         linear-gradient(
-            125deg,
-            #252B28,
-            #353D38,
-            #242926
+            90deg,
+            rgba(9, 12, 10, 0.30),
+            transparent 60%
         );
 
 }
 
 
-.store-background::after {
 
-    content:
-        "";
+/* =========================================================
+   CARD NUMBER
+========================================================= */
 
-    position:
-        absolute;
+.store-card-number {
 
-    inset:
-        6%;
+    position: absolute;
 
-    border:
-        1px solid rgba(182,160,108,0.2);
+    top: 24px;
+    left: 25px;
 
-}
+    z-index: 3;
 
+    font-family:
+        "Rajdhani",
+        sans-serif;
 
-.store-overlay {
+    font-size: 11px;
 
-    position:
-        absolute;
+    letter-spacing:
+        3px;
 
-    inset:
-        0;
-
-    background:
-        radial-gradient(
-            circle,
-            transparent,
-            rgba(0,0,0,0.65)
+    color:
+        rgba(
+            245,
+            242,
+            233,
+            0.62
         );
 
 }
 
 
-.store-title {
 
-    position:
-        relative;
+/* =========================================================
+   CARD CONTENT
+========================================================= */
 
-    z-index:
-        5;
+.store-card-content {
 
-    text-align:
+    position: absolute;
+
+    z-index: 3;
+
+    left: 30px;
+    right: 30px;
+
+    bottom: 28px;
+
+}
+
+
+.store-card-category {
+
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        3px;
+
+    color:
+        var(--gold);
+
+}
+
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.store-card h3 {
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size:
+        clamp(
+            34px,
+            3.2vw,
+            52px
+        );
+
+    font-weight: 300;
+
+    line-height: 0.95;
+
+    letter-spacing:
+        1px;
+
+    color:
+        var(--text-bright);
+
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.store-card p {
+
+    max-width:
+        300px;
+
+    margin-top:
+        18px;
+
+    color:
+        rgba(
+            241,
+            238,
+            229,
+            0.60
+        );
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* =========================================================
+   CARD ACTION
+========================================================= */
+
+.store-card-action {
+
+    margin-top:
+        24px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid
+        rgba(
+            241,
+            238,
+            229,
+            0.18
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        2.5px;
+
+    color:
+        var(--text-bright);
+
+}
+
+
+.store-arrow {
+
+    font-size:
+        20px;
+
+    color:
+        var(--brand-green-light);
+
+}
+
+
+
+/* =========================================================
+   TEMPORARY DIFFERENT IMAGE POSITION
+========================================================= */
+
+#storeGame .store-card-bg {
+
+    object-position:
+        center 35%;
+
+}
+
+
+#storeCredits .store-card-bg {
+
+    object-position:
         center;
 
 }
 
 
-.store-title h2 {
+#storeItems .store-card-bg {
 
-    font-size:
-        clamp(100px, 15vw, 240px);
-
-    font-weight:
-        200;
-
-    letter-spacing:
-        20px;
+    object-position:
+        center;
 
 }
 
 
-.title-line {
 
-    width:
-        1px;
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-    height:
-        65px;
+@media (
+    max-width: 950px
+) {
 
-    margin:
-        30px auto;
+    .store-container {
+
+        padding-top:
+            120px;
+
+    }
+
+
+    .store-card-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .store-card {
+
+        height:
+            420px;
+
+    }
+
+
+    .store-title-row {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+
+    }
+
+}
+
+/* =========================================================
+   STORE CARD — HOVER TRANSITION
+========================================================= */
+
+.store-card {
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.store-card-bg {
+
+    transition:
+        transform 0.6s ease,
+        filter 0.45s ease;
+}
+
+
+.store-card-overlay {
+
+    transition:
+        background 0.4s ease;
+}
+
+
+.store-card h3 {
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+.store-card-category {
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+.store-card-action {
+
+    transition:
+        border-color 0.35s ease;
+}
+
+
+.store-arrow {
+
+    display: inline-block;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+
+/* =========================================================
+   STORE CARD — HOVER
+========================================================= */
+
+.store-card:hover {
+
+    transform:
+        translateY(-12px);
+
+    border-color:
+        rgba(
+            142,
+            181,
+            159,
+            0.70
+        );
+
+    box-shadow:
+        0 22px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+    z-index: 5;
+
+}
+
+
+
+/* image zoom */
+
+.store-card:hover
+.store-card-bg {
+
+    transform:
+        scale(1.05);
+
+    filter:
+        brightness(1.08);
+}
+
+
+
+/* overlay becomes slightly lighter */
+
+.store-card:hover
+.store-card-overlay {
 
     background:
-        var(--gold);
+
+        linear-gradient(
+            180deg,
+            rgba(9, 12, 10, 0.02)
+            0%,
+
+            rgba(9, 12, 10, 0.08)
+            35%,
+
+            rgba(9, 12, 10, 0.78)
+            100%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(9, 12, 10, 0.20),
+            transparent 60%
+        );
+
+}
+
+
+
+/* category moves */
+
+.store-card:hover
+.store-card-category {
+
+    transform:
+        translateX(4px);
+
+    color:
+        var(--gold-light);
+
+}
+
+
+
+/* main title moves */
+
+.store-card:hover h3 {
+
+    transform:
+        translateX(5px);
+
+    color:
+        #ffffff;
+
+}
+
+
+
+/* bottom divider highlight */
+
+.store-card:hover
+.store-card-action {
+
+    border-color:
+        rgba(
+            142,
+            181,
+            159,
+            0.48
+        );
+
+}
+
+
+
+/* arrow moves right */
+
+.store-card:hover
+.store-arrow {
+
+    transform:
+        translateX(7px);
+
+    color:
+        var(--brand-green-light);
+
+}
+
+.store-card:active {
+
+    transform:
+        translateY(-7px)
+        scale(0.99);
 
 }
 
@@ -2297,333 +3375,649 @@ html {
    PAGE 05 — JOIN
 ========================================================= */
 
-.join-section {
+/* =========================================================
+   PAGE 05 — ABOUT / WORLD
+========================================================= */
+
+.about-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
 
     background:
+
+        radial-gradient(
+            circle at 72% 45%,
+            rgba(85, 126, 105, 0.14),
+            transparent 35%
+        ),
 
         linear-gradient(
             120deg,
-            #252B28,
-            #303733
+            #202522,
+            #29302C
         );
 
-    display: flex;
-
-    flex-direction: column;
+    overflow: hidden;
 
 }
 
 
-.join-grid {
 
-    width:
-        86%;
+/* =========================================================
+   BACKGROUND NUMBER
+========================================================= */
 
-    flex:
-        1;
+.about-background-number {
 
-    margin:
-        auto;
+    position: absolute;
 
-    display:
-        grid;
+    left: -1%;
+    top: 5%;
 
-    grid-template-columns:
-        1.3fr .7fr;
+    font-size: 430px;
 
-    align-items:
-        center;
+    line-height: 1;
 
-    gap:
-        80px;
-
-    padding-top:
-        100px;
-
-}
-
-
-.join-content h2 {
-
-    font-size:
-        clamp(55px, 7vw, 100px);
-
-    font-weight:
-        300;
-
-    line-height:
-        .95;
-
-}
-
-
-.join-content h2 span {
-
-    display:
-        block;
+    font-weight: 700;
 
     color:
-        var(--red);
+        rgba(
+            255,
+            255,
+            255,
+            0.018
+        );
+
+    pointer-events: none;
 
 }
 
 
-.join-description {
 
-    color:
-        var(--grey);
+/* =========================================================
+   MAIN GRID
+========================================================= */
 
-    max-width:
-        580px;
+.about-grid {
 
-    margin-top:
-        30px;
+    position: relative;
 
-    line-height:
-        1.8;
+    z-index: 2;
 
-}
+    width: 86%;
 
+    max-width: 1450px;
 
-.reward-grid {
+    flex: 1;
 
-    margin-top:
+    margin: auto;
+
+    padding:
+        130px 0
         55px;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        1.05fr 0.95fr;
 
-    gap:
-        14px;
+    align-items: center;
+
+    gap: 85px;
 
 }
 
 
-.reward-card {
 
-    min-height:
-        180px;
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.about-content {
+
+    max-width: 720px;
+
+}
+
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-title {
+    margin-top: 8px;
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+    font-size:
+        clamp(44px, 4.6vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 0.98;
+
+    letter-spacing: 1.5px;
+
+    color:
+        var(--text-bright);
+}
+
+
+.about-title span {
+
+    color:
+        var(--brand-green-light);
+
+}
+
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.about-story {
+    max-width: 640px;
+
+    margin-top: 28px;
+
+    padding-left: 22px;
+
+    border-left:
+        1px solid
+        rgba(198, 173, 125, 0.45);
+}
+
+.about-story p {
+    margin-top: 12px;
+
+    color:
+        var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+.about-year {
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color:
+        var(--gold);
+}
+
+
+/* =========================================================
+   WORLD GRID
+========================================================= */
+
+.world-grid {
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}   
+
+
+/* =========================================================
+   WORLD CARD
+========================================================= */
+
+.world-card {
+    position: relative;
+
+    min-height: 170px;
+
+    padding: 22px 20px;
 
     border:
-        1px solid var(--border);
-
-    padding:
-        25px;
+        1px solid
+        rgba(241, 238, 229, 0.16);
 
     background:
-        rgba(255,255,255,0.02);
-
-    transition:
-        .3s;
-
+        rgba(255, 255, 255, 0.025);
 }
 
 
-.reward-card:hover {
+.world-number {
+    display: block;
 
-    transform:
-        translateY(-8px);
+    margin-bottom: 28px;
 
-    border-color:
-        var(--gold);
+    font-family:
+        "Rajdhani",
+        sans-serif;
 
-}
+    font-size: 16px;
 
-
-.reward-icon {
+    letter-spacing: 2px;
 
     color:
         var(--gold);
-
-    margin-bottom:
-        45px;
-
 }
 
 
-.reward-card span {
+.world-label {
+    display: block;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
 
     color:
-        var(--grey);
-
-    font-size:
-        8px;
-
-    letter-spacing:
-        2px;
-
+        var(--text-bright);
 }
 
 
-.reward-card h3 {
+.world-card p {
+    margin-top: 10px;
 
-    margin-top:
-        8px;
+    color:
+        var(--text-muted);
 
-    font-size:
-        16px;
+    font-size: 14px;
 
+    line-height: 1.65;
 }
 
 
-.join-action {
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.about-visual {
+
+    position: relative;
+
+    width: 100%;
+
+    height:
+        min(
+            650px,
+            70vh
+        );
+
+    overflow: hidden;
 
     border:
-        1px solid rgba(182,160,108,.4);
+        1px solid
+        rgba(
+            198,
+            173,
+            125,
+            0.30
+        );
 
-    padding:
-        12px;
+    background:
+        #161A18;
 
 }
 
 
-.join-action-inner {
 
-    min-height: 500px;
+/* =========================================================
+   IMAGE
+========================================================= */
 
-    padding: 55px;
+.about-world-image {
 
-    display: flex;
+    position: absolute;
 
-    flex-direction: column;
+    inset: 0;
 
-    justify-content: center;
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.about-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
 
     background:
 
         linear-gradient(
-            150deg,
-            rgba(71, 122, 99, 0.42),
-            rgba(40, 47, 43, 0.96)
+            180deg,
+
+            rgba(
+                10,
+                14,
+                12,
+                0.05
+            )
+            0%,
+
+            rgba(
+                10,
+                14,
+                12,
+                0.18
+            )
+            45%,
+
+            rgba(
+                10,
+                14,
+                12,
+                0.92
+            )
+            100%
         );
 
 }
 
 
-.join-small {
 
-    color:
-        var(--gold);
+/* =========================================================
+   VISUAL META
+========================================================= */
 
-    font-size:
-        9px;
+.about-visual-meta {
 
-    letter-spacing:
-        3px;
+    position: absolute;
 
-}
+    z-index: 3;
 
+    top: 24px;
 
-.join-action h3 {
+    left: 25px;
 
-    font-size:
-        55px;
+    right: 25px;
 
-    font-weight:
-        300;
-
-    margin:
-        22px 0 40px;
-
-}
-
-
-.join-button {
+    display: flex;
 
     justify-content:
         space-between;
 
-}
+    font-family:
+        "Rajdhani",
+        sans-serif;
 
+    font-size: 9px;
 
-.join-action p {
+    font-weight: 600;
 
-    margin-top:
-        22px;
+    letter-spacing: 2.5px;
 
     color:
-        var(--grey);
-
-    font-size:
-        9px;
-
-    letter-spacing:
-        2px;
+        rgba(
+            245,
+            242,
+            233,
+            0.65
+        );
 
 }
+
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.about-action {
+
+    position: absolute;
+
+    z-index: 4;
+
+    left: 35px;
+
+    right: 35px;
+
+    bottom: 32px;
+
+}
+
+
+.about-action-label {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.about-action h3 {
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            56px
+        );
+
+    font-weight: 300;
+
+    line-height: 1.02;
+
+    color:
+        var(--text-bright);
+
+}
+
+
+
+/* =========================================================
+   START BUTTON
+========================================================= */
+
+.about-start-button {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+}
+
+
+.about-action p {
+
+    margin-top: 15px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--text-muted);
+
+}
+
 
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
-footer {
+.site-footer {
 
-    height:
-        100px;
+    position: relative;
 
-    width:
-        90%;
+    z-index: 3;
 
-    margin:
-        auto;
+    width: 90%;
+
+    margin: 0 auto;
+
+    min-height: 75px;
 
     border-top:
-        1px solid var(--border);
+        1px solid
+        rgba(
+            241,
+            238,
+            229,
+            0.12
+        );
 
-    display:
-        flex;
+    display: flex;
+
+    align-items: center;
 
     justify-content:
         space-between;
 
-    align-items:
-        center;
-
     color:
-        var(--grey);
-
-    font-size:
-        9px;
-
-    letter-spacing:
-        2px;
+        var(--text-muted);
 
 }
 
 
 .footer-logo {
 
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
     color:
-        white;
+        var(--text-bright);
+
+}
+
+
+.site-footer p {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
 
 }
 
 
 .footer-links {
 
-    display:
-        flex;
+    display: flex;
 
-    gap:
-        25px;
+    gap: 30px;
 
 }
 
 
 .footer-links a {
 
-    color:
-        var(--grey);
+    text-decoration: none;
 
-    text-decoration:
-        none;
+    color:
+        var(--text-muted);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
 
 }
 
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+    max-width: 1050px
+) {
+
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+
+        padding-top:
+            130px;
+
+    }
+
+
+    .about-visual {
+
+        height:
+            600px;
+
+    }
+
+
+    .world-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
 
 /* =========================================================
    PAGE NAVIGATION

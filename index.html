@@ -15,8 +15,6 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="./mainpage.css">
-
-    <link rel="stylesheet" href="./mainpage.css">
 </head>
 
 <body>
@@ -58,7 +56,7 @@
                         STORE
                     </a>
 
-                    <a href="#join" class="nav-link">
+                    <a href="#about" class="nav-link">
                         ABOUT
                     </a>
 
@@ -110,7 +108,7 @@
             <span class="dot"></span>
         </button>
 
-        <button class="page-dot" data-target="join">
+        <button class="page-dot" data-target="about">
             <span class="page-number">05</span>
             <span class="dot"></span>
         </button>
@@ -161,11 +159,11 @@
 
                 <div class="hero-buttons reveal">
 
-                    <button class="play-button main-play">
+                    <a class="play-button main-play" href="./buy-store/gamebuy.html">
                         START GAME
 
                         <span>↗</span>
-                    </button>
+                    </a>
 
                     <button class="secondary-button">
                         WATCH TRAILER
@@ -200,10 +198,16 @@
              PAGE 02
              UPDATE / NEWS
         =================================================== -->
+
+
         <section class="section updates-section" id="updates">
 
             <div class="section-container">
 
+
+                <!-- =========================
+             PAGE TITLE
+        ========================== -->
 
                 <div class="section-heading reveal">
 
@@ -227,53 +231,69 @@
 
 
 
-                <div class="update-layout">
+                <!-- =========================
+             SEASON 18 TITLE ART
+        ========================== -->
+
+                <div class="season-title-block reveal">
+
+                    <img src="./image/season18-the-broken-line.png" alt="Season 18 The Broken Line"
+                        class="season-title-image">
+
+                    <div class="season-title-line"></div>
+
+                </div>
 
 
-                    <!-- Featured -->
-                    <article class="featured-update reveal">
 
-                        <div class="update-image update-image-main">
+                <!-- =========================
+             EVENT CARDS
+        ========================== -->
 
-                            <span>
-                                SEASON 01
-                            </span>
+                <div class="season-card-grid">
+
+
+                    <!-- =================================
+                 CARD 01
+                 RANKED RATING
+            ================================== -->
+
+                    <article class="season-card reveal">
+
+                        <div class="season-card-image">
+
+                            <img src="./image/ChatGPT Image 20 Sept 2026, 02_25_30.png" alt="Ranked Rating Rework">
+
 
                         </div>
 
 
-                        <div class="update-content">
+                        <div class="season-card-content">
 
-                            <div class="update-meta">
-
-                                <span>SEASON UPDATE</span>
-
-                                <span>09.18.2026</span>
-
+                            <div class="season-card-date">
+                                SEASON 18 · COMPETITIVE
                             </div>
 
-
                             <h3>
-                                THE FIRST LINE
+                                RANKED RATING
+                                <br>
+                                REWORK
                             </h3>
 
+                            <div class="season-card-divider"></div>
 
                             <p>
-
-                                New competitive season,
-                                redesigned ranked progression,
-                                updated maps and new tactical rewards.
-
+                                Placement matches, clearer rank progression
+                                and performance-based adjustments.
                             </p>
 
+                            <a href="#" class="season-card-link">
 
-                            <button class="text-link">
-
-                                VIEW PATCH NOTES
+                                VIEW DETAILS
 
                                 <span>→</span>
 
-                            </button>
+                            </a>
 
                         </div>
 
@@ -281,119 +301,105 @@
 
 
 
-                    <!-- Cards -->
-                    <div class="update-list">
+                    <!-- =================================
+                 CARD 02
+                 BLACK SECTOR
+            ================================== -->
+
+                    <article class="season-card season-card-featured reveal">
+
+                        <div class="season-card-image">
+
+                            <img src="./image/ChatGPT Image 20 Sept 2026, 02_25_23.png" alt="Operation Black Sector">
 
 
-                        <article class="update-card reveal">
+                        </div>
 
-                            <div class="update-number">
-                                01
+
+                        <div class="season-card-content">
+
+                            <div class="season-card-date">
+                                SEASON 18 · NEW CONTENT
                             </div>
 
-                            <div>
+                            <h3>
+                                OPERATION:
+                                <br>
+                                BLACK SECTOR
+                            </h3>
 
-                                <span class="card-category">
-                                    COMPETITIVE
-                                </span>
+                            <div class="season-card-divider"></div>
 
-                                <h4>
-                                    Ranked Rating Rework
-                                </h4>
+                            <p>
+                                A new combat zone built around vertical
+                                movement and close-range engagements.
+                            </p>
 
-                                <p>
+                            <a href="#" class="season-card-link">
 
-                                    Placement matches,
-                                    clearer rank progression and
-                                    performance-based adjustments.
+                                VIEW DETAILS
 
-                                </p>
+                                <span>→</span>
 
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =================================
+                 CARD 03
+                 ZERO HOUR
+            ================================== -->
+
+                    <article class="season-card reveal">
+
+                        <div class="season-card-image">
+
+                            <img src="./image/ChatGPT Image 20 Sept 2026, 02_31_02.png" alt="Zero Hour Protocol">
+
+                        </div>
+
+
+                        <div class="season-card-content">
+
+                            <div class="season-card-date">
+                                SEASON 18 · LIMITED EVENT
                             </div>
 
-                            <span class="card-arrow">
-                                ↗
-                            </span>
+                            <h3>
+                                ZERO HOUR
+                                <br>
+                                PROTOCOL
+                            </h3>
 
-                        </article>
+                            <div class="season-card-divider"></div>
 
+                            <p>
+                                Complete seasonal objectives to unlock
+                                exclusive cosmetics and profile rewards.
+                            </p>
 
+                            <a href="#" class="season-card-link">
 
-                        <article class="update-card reveal">
+                                VIEW DETAILS
 
-                            <div class="update-number">
-                                02
-                            </div>
+                                <span>→</span>
 
-                            <div>
+                            </a>
 
-                                <span class="card-category">
-                                    NEW CONTENT
-                                </span>
+                        </div>
 
-                                <h4>
-                                    Operation: Black Sector
-                                </h4>
+                    </article>
 
-                                <p>
-
-                                    A new combat zone built around
-                                    vertical movement and close-range
-                                    engagements.
-
-                                </p>
-
-                            </div>
-
-                            <span class="card-arrow">
-                                ↗
-                            </span>
-
-                        </article>
-
-
-
-                        <article class="update-card reveal">
-
-                            <div class="update-number">
-                                03
-                            </div>
-
-                            <div>
-
-                                <span class="card-category">
-                                    LIMITED EVENT
-                                </span>
-
-                                <h4>
-                                    Zero Hour Protocol
-                                </h4>
-
-                                <p>
-
-                                    Complete seasonal objectives
-                                    to unlock exclusive cosmetics
-                                    and profile rewards.
-
-                                </p>
-
-                            </div>
-
-                            <span class="card-arrow">
-                                ↗
-                            </span>
-
-                        </article>
-
-
-                    </div>
 
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- ==================================================
@@ -418,9 +424,7 @@
 
                     <div class="hero-display-image" id="heroImage">
 
-                        <span id="heroImageText">
-                            NOVA
-                        </span>
+                        <img id="heroImagePhoto" src="./image/hero-nova.png" alt="NOVA">
 
                     </div>
 
@@ -518,6 +522,26 @@
 
                         </div>
 
+                        <div class="ability">
+
+                            <span class="ability-key">
+                                R
+                            </span>
+
+                            <div>
+
+                                <strong id="ability3Name">
+                                    OATHFALL
+                                </strong>
+
+                                <p id="ability3Description">
+                                    Drive the sword into the ground and release a powerful shockwave
+                                </p>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
 
@@ -570,133 +594,350 @@
              PAGE 04
              STORE
         =================================================== -->
+        <!-- ==================================================
+     PAGE 04
+     STORE
+=================================================== -->
+
         <section class="section store-section" id="store">
 
-
-            <div class="store-background"></div>
-
-
-            <div class="store-overlay"></div>
-
-
-            <div class="store-title reveal">
-
-                <p class="eyebrow">
-                    ZERO//LINE COLLECTION
-                </p>
-
-                <h2>
-                    STORE
-                </h2>
-
-
-                <div class="title-line"></div>
-
-
-                <button class="play-button">
-                    ENTER STORE
-
-                    <span>↗</span>
-                </button>
-
+            <div class="store-background-number">
+                04
             </div>
 
 
-        </section>
+            <div class="store-container">
 
+                <!-- =========================
+             TITLE
+        ========================== -->
+
+                <div class="store-heading reveal">
+
+                    <p class="eyebrow">
+                        ZERO//LINE COLLECTION
+                    </p>
+
+                    <div class="store-title-row">
+
+                        <h2>
+                            STORE
+                        </h2>
+
+                        <span>
+                            CHOOSE YOUR ACCESS
+                        </span>
+
+                    </div>
+
+                    <div class="store-heading-line"></div>
+
+                </div>
+
+
+
+                <!-- =========================
+             STORE CARDS
+        ========================== -->
+
+                <div class="store-card-grid">
+
+
+                    <!-- 01 BUY GAME -->
+
+                    <a class="store-card reveal" id="storeGame" href="./buy-store/gamebuy.html">
+
+                        <img class="store-card-bg" src="./image/websitestore1.png" alt="Purchase ZERO//LINE">
+
+
+                        <div class="store-card-overlay"></div>
+
+
+                        <div class="store-card-number">
+                            01
+                        </div>
+
+
+                        <div class="store-card-content">
+
+                            <span class="store-card-category">
+                                ZERO//LINE
+                            </span>
+
+                            <h3>
+                                BUY
+                                <br>
+                                GAME
+                            </h3>
+
+                            <p>
+                                Choose your edition and enter the frontline.
+                            </p>
+
+
+                            <div class="store-card-action">
+
+                                <span>
+                                    VIEW EDITIONS
+                                </span>
+
+                                <span class="store-arrow">
+                                    →
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                        <!-- 02 CREDITS -->
+
+                        <a class="store-card reveal" id="storeCredits" type="button" href="./buy-credits/credits.html">
+
+                            <img class="store-card-bg" src="./image/websitestore2.png"
+                                alt="Recharge ZERO//LINE credits">
+
+
+                            <div class="store-card-overlay"></div>
+
+
+                            <div class="store-card-number">
+                                02
+                            </div>
+
+
+                            <div class="store-card-content">
+
+                                <span class="store-card-category">
+                                    ACCOUNT
+                                </span>
+
+                                <h3>
+                                    GAME
+                                    <br>
+                                    CREDITS
+                                </h3>
+
+                                <p>
+                                    Recharge credits for your ZERO//LINE account.
+                                </p>
+
+
+                                <div class="store-card-action">
+
+                                    <span>
+                                        RECHARGE
+                                    </span>
+
+                                    <span class="store-arrow">
+                                        →
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- 03 ITEM STORE -->
+
+                        <button class="store-card reveal" id="storeItems" type="button">
+
+                            <img class="store-card-bg" src="./image/websitestore3.png" alt="Browse ZERO//LINE items">
+
+
+                            <div class="store-card-overlay"></div>
+
+
+                            <div class="store-card-number">
+                                03
+                            </div>
+
+
+                            <div class="store-card-content">
+
+                                <span class="store-card-category">
+                                    COLLECTION
+                                </span>
+
+                                <h3>
+                                    ITEM
+                                    <br>
+                                    STORE
+                                </h3>
+
+                                <p>
+                                    Explore skins, weapons and seasonal items.
+                                </p>
+
+
+                                <div class="store-card-action">
+
+                                    <span>
+                                        EXPLORE ITEMS
+                                    </span>
+
+                                    <span class="store-arrow">
+                                        →
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </button>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
         <!-- ==================================================
              PAGE 05
              JOIN
         =================================================== -->
-        <section class="section join-section" id="join">
+        <!-- ==================================================
+     PAGE 05
+     ABOUT / WORLD
+=================================================== -->
+
+        <section class="section about-section" id="about">
+
+            <div class="about-background-number">
+                05
+            </div>
 
 
-            <div class="join-grid">
+            <div class="about-grid">
 
 
-                <!-- LEFT -->
-                <div class="join-content">
+                <!-- =========================================
+             LEFT — WORLD INFORMATION
+        ========================================== -->
 
+                <div class="about-content">
 
                     <p class="eyebrow reveal">
-                        JOIN THE FRONTLINE
+                        ABOUT ZERO//LINE
                     </p>
 
 
-                    <h2 class="reveal">
+                    <h2 class="about-title reveal">
 
-                        ENTER THE
+                        THE WORLD
+                        <br>
 
                         <span>
-                            ZERO LINE
+                            DIDN'T END.
                         </span>
+
+                        <br>
+
+                        IT BROKE APART.
 
                     </h2>
 
 
-                    <p class="join-description reveal">
+                    <div class="about-story reveal">
 
-                        Create your account and receive exclusive
-                        launch rewards before entering your first match.
+                        <span class="about-year">
+                            2037 — THE COLLAPSE
+                        </span>
 
-                    </p>
+                        <p>
+                            Autonomous defence networks once created to
+                            protect the world's major cities entered a
+                            catastrophic system failure.
+                        </p>
+
+                        <p>
+                            Entire districts were sealed behind corrupted
+                            machine-controlled territory, forcing survivors
+                            to retreat behind fractured defensive lines.
+                        </p>
+
+                        <p>
+                            The ZERO LINE is now the shifting boundary between
+                            reclaimed territory and the sectors humanity has
+                            yet to take back.
+                        </p>
+
+                    </div>
 
 
 
-                    <div class="reward-grid">
+                    <!-- =========================================
+                 WORLD PILLARS
+            ========================================== -->
+
+                    <div class="world-grid">
 
 
-                        <article class="reward-card reveal">
+                        <!-- 01 -->
 
-                            <div class="reward-icon">
+                        <article class="world-card reveal">
+
+                            <span class="world-number">
                                 01
-                            </div>
-
-                            <span>
-                                DIGITAL REWARD
                             </span>
 
-                            <h3>
-                                Exclusive Wallpaper
-                            </h3>
+                            <span class="world-label">
+                                THE CONFLICT
+                            </span>
+
+                            <p>
+                                Autonomous war machines control
+                                abandoned sectors and critical routes.
+                            </p>
 
                         </article>
 
 
 
-                        <article class="reward-card reveal">
+                        <!-- 02 -->
 
-                            <div class="reward-icon">
+                        <article class="world-card reveal">
+
+                            <span class="world-number">
                                 02
-                            </div>
-
-                            <span>
-                                IN-GAME ITEM
                             </span>
 
-                            <h3>
-                                Founder Weapon Skin
-                            </h3>
+                            <span class="world-label">
+                                THE FRONTLINE
+                            </span>
+
+                            <p>
+                                Combat units defend survivor hubs
+                                and reclaim lost territory.
+                            </p>
 
                         </article>
 
 
 
-                        <article class="reward-card reveal">
+                        <!-- 03 -->
 
-                            <div class="reward-icon">
+                        <article class="world-card reveal">
+
+                            <span class="world-number">
                                 03
-                            </div>
-
-                            <span>
-                                PLAYER PROFILE
                             </span>
 
-                            <h3>
-                                Zero Line Badge
-                            </h3>
+                            <span class="world-label">
+                                THE FUTURE
+                            </span>
+
+                            <p>
+                                Every recovered district pushes
+                                humanity beyond the Zero Line.
+                            </p>
 
                         </article>
 
@@ -707,40 +948,69 @@
 
 
 
-                <!-- RIGHT -->
-                <div class="join-action reveal">
+                <!-- =========================================
+             RIGHT — WORLD VISUAL
+        ========================================== -->
+
+                <div class="about-visual reveal">
 
 
-                    <div class="join-action-inner">
+                    <img src="./image/websiteabout.png" alt="ZERO LINE world" class="about-world-image">
 
 
-                        <span class="join-small">
-                            AVAILABLE NOW
+                    <div class="about-image-overlay"></div>
+
+
+
+                    <!-- TOP META -->
+
+                    <div class="about-visual-meta">
+
+                        <span>
+                            FRONTLINE ARCHIVE
+                        </span>
+
+                        <span>
+                            SECTOR // 07
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- BOTTOM CTA -->
+
+                    <div class="about-action">
+
+                        <span class="about-action-label">
+                            FRONTLINE STATUS
                         </span>
 
 
                         <h3>
                             READY TO
                             <br>
-                            DEPLOY?
+                            CROSS THE LINE?
                         </h3>
 
 
-                        <button class="play-button join-button">
+                        <a class="play-button about-start-button" href="./buy-store/gamebuy.html">
 
                             START GAME
 
-                            <span>↗</span>
+                            <span>
+                                ↗
+                            </span>
 
-                        </button>
+                        </a>
 
 
                         <p>
                             PC · GLOBAL SERVERS
                         </p>
 
-
                     </div>
+
 
                 </div>
 
@@ -748,7 +1018,11 @@
 
 
 
-            <footer>
+            <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+            <footer class="site-footer">
 
                 <div class="footer-logo">
                     ZERO//LINE
@@ -778,9 +1052,7 @@
 
             </footer>
 
-
         </section>
-
 
     </main>
 

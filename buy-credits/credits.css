@@ -1,0 +1,2550 @@
+/* =========================================================
+   PROJECT ZERO//LINE
+   GAME CREDITS
+========================================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+
+    background:
+        #111513;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        #111513;
+
+    color:
+        #F1EEE5;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --bg-main:
+        #202522;
+
+    --bg-soft:
+        #2B312E;
+
+    --bg-deep:
+        #111513;
+
+    --bg-panel:
+        #181D1A;
+
+
+    --text-main:
+        #F1EEE5;
+
+    --text-soft:
+        #C4C7C1;
+
+    --text-muted:
+        #828A85;
+
+
+    --brand-green:
+        #557E69;
+
+    --brand-green-light:
+        #8EB59F;
+
+
+    --gold:
+        #C6AD7D;
+
+    --gold-light:
+        #DDCDA8;
+
+
+    --border:
+        rgba(
+            241,
+            238,
+            229,
+            0.14
+        );
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.credits-header {
+
+    position: fixed;
+
+    z-index: 100;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 88px;
+
+    padding:
+        0 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            rgba(
+                14,
+                18,
+                16,
+                0.94
+            )
+            0%,
+
+            rgba(
+                14,
+                18,
+                16,
+                0.58
+            )
+            55%,
+
+            transparent
+            100%
+        );
+
+}
+
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.credits-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    text-decoration: none;
+
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color:
+        var(--text-main);
+
+    transform:
+        skewX(-5deg);
+
+}
+
+
+.logo-slash {
+
+    color:
+        var(--brand-green-light);
+
+}
+
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.credits-nav {
+
+    margin-left:
+        65px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        42px;
+
+}
+
+
+.credits-nav a {
+
+    position: relative;
+
+    padding:
+        35px 0;
+
+    color:
+        rgba(
+            241,
+            238,
+            229,
+            0.58
+        );
+
+    text-decoration: none;
+
+    font-size:
+        13px;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+.credits-nav a:hover,
+.credits-nav a.active {
+
+    color:
+        var(--text-main);
+
+}
+
+
+.credits-nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 23px;
+
+    width: 24px;
+
+    height: 2px;
+
+    background:
+        var(--brand-green-light);
+
+}
+
+
+
+/* =========================================================
+   BACK STORE
+========================================================= */
+
+.credits-back {
+
+    margin-left:
+        auto;
+
+    text-decoration:
+        none;
+
+    color:
+        var(--text-soft);
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.credits-back:hover {
+
+    color:
+        var(--text-main);
+
+    transform:
+        translateX(-4px);
+
+}
+
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+/* =========================================================
+   LAYOUT COMPACT FIX
+========================================================= */
+
+.credits-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        92px 7%
+        38px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(360px, 0.82fr)
+        minmax(560px, 1.18fr);
+
+    align-items: start;
+
+    gap:
+        clamp(
+            55px,
+            7vw,
+            110px
+        );
+
+    overflow: hidden;
+}
+
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.credits-background {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        0;
+
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+
+    object-fit:
+        cover;
+
+    object-position:
+        center 45%;
+
+
+    filter:
+        brightness(0.34)
+        saturate(0.72)
+        contrast(1.08);
+
+
+    opacity:
+        0;
+
+    scale:
+        1.05;
+
+}
+
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.credits-overlay {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        1;
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            rgba(
+                17,
+                21,
+                19,
+                0.42
+            )
+            0%,
+
+            rgba(
+                22,
+                28,
+                24,
+                0.70
+            )
+            34%,
+
+            rgba(
+                17,
+                21,
+                19,
+                0.93
+            )
+            62%,
+
+            rgba(
+                17,
+                21,
+                19,
+                0.99
+            )
+            100%
+        ),
+
+
+        linear-gradient(
+            180deg,
+
+            rgba(
+                10,
+                13,
+                11,
+                0.55
+            )
+            0%,
+
+            transparent
+            32%,
+
+            rgba(
+                10,
+                13,
+                11,
+                0.22
+            )
+            65%,
+
+            rgba(
+                10,
+                13,
+                11,
+                0.75
+            )
+            100%
+        );
+
+}
+
+
+
+/* =========================================================
+   BACKGROUND NUMBER
+========================================================= */
+
+.credits-background-number {
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    left:
+        -1%;
+
+    top:
+        7%;
+
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size:
+        430px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.018
+        );
+
+
+    pointer-events:
+        none;
+
+}
+
+
+
+/* =========================================================
+   LEFT — CREDIT INFO
+========================================================= */
+
+.credits-visual {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        100%;
+
+    max-width:
+        520px;
+
+}
+
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.credits-eyebrow {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        4px;
+
+    color:
+        var(--gold);
+
+}
+
+
+
+/* =========================================================
+   ZERO CREDITS TITLE
+========================================================= */
+
+.credits-visual h1 {
+
+    margin-top:
+        10px;
+
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        clamp(
+            58px,
+            5.3vw,
+            84px
+        );
+
+
+    font-weight:
+        400;
+
+
+    line-height:
+        0.88;
+
+
+    letter-spacing:
+        3px;
+
+
+    color:
+        var(--text-main);
+
+}
+
+
+.credits-visual h1 span {
+
+    color:
+        var(--brand-green-light);
+
+}
+
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.credits-tagline {
+
+    display:
+        block;
+
+    margin-top:
+        21px;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        11px;
+
+
+    font-weight:
+        600;
+
+
+    letter-spacing:
+        4px;
+
+
+    color:
+        var(--gold);
+
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.credits-description {
+
+    max-width:
+        440px;
+
+    margin-top:
+        15px;
+
+
+    color:
+        var(--text-soft);
+
+
+    font-size:
+        13px;
+
+
+    line-height:
+        1.85;
+
+}
+
+
+
+/* =========================================================
+   BALANCE
+========================================================= */
+
+.balance-panel {
+
+    width:
+        360px;
+
+    max-width:
+        100%;
+
+
+    margin-top:
+        28px;
+
+
+    padding:
+        17px 0;
+
+
+    border-top:
+        1px solid
+        rgba(
+            198,
+            173,
+            125,
+            0.32
+        );
+
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+
+.balance-label {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        9px;
+
+
+    font-weight:
+        600;
+
+
+    letter-spacing:
+        3px;
+
+
+    color:
+        var(--text-muted);
+
+}
+
+
+
+.balance-value {
+
+    margin-top:
+        9px;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        15px;
+
+}
+
+
+
+.credit-symbol {
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        23px;
+
+
+    color:
+        var(--brand-green-light);
+
+}
+
+
+
+.balance-value strong {
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        34px;
+
+
+    font-weight:
+        400;
+
+
+    letter-spacing:
+        2px;
+
+
+    color:
+        var(--text-main);
+
+}
+
+
+
+/* =========================================================
+   ACCOUNT META
+========================================================= */
+
+.account-meta {
+
+    width:
+        360px;
+
+    max-width:
+        100%;
+
+
+    margin-top:
+        18px;
+
+
+    display:
+        grid;
+
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+
+    gap:
+        15px;
+
+}
+
+
+
+.account-meta div {
+
+    display:
+        flex;
+
+
+    flex-direction:
+        column;
+
+
+    gap:
+        4px;
+
+}
+
+
+
+.account-meta span {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        8px;
+
+
+    letter-spacing:
+        2px;
+
+
+    color:
+        var(--text-muted);
+
+}
+
+
+
+.account-meta strong {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        11px;
+
+
+    font-weight:
+        600;
+
+
+    letter-spacing:
+        1.5px;
+
+
+    color:
+        var(--text-soft);
+
+}
+
+
+
+/* =========================================================
+   RIGHT — PURCHASE PANEL
+========================================================= */
+
+.purchase-panel {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+
+    width:
+        100%;
+
+
+    max-width:
+        760px;
+
+
+    justify-self:
+        end;
+
+}
+
+
+
+/* =========================================================
+   PURCHASE HEADING
+========================================================= */
+
+.purchase-heading span {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        9px;
+
+
+    font-weight:
+        600;
+
+
+    letter-spacing:
+        3px;
+
+
+    color:
+        var(--gold);
+
+}
+
+
+
+.purchase-heading h2 {
+
+    margin-top:
+        4px;
+
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        36px;
+
+
+    font-weight:
+        400;
+
+
+    letter-spacing:
+        4px;
+
+
+    color:
+        var(--text-main);
+
+}
+
+
+
+/* =========================================================
+   CREDIT GRID
+========================================================= */
+
+.credit-grid {
+
+    margin-top:
+        18px;
+
+
+    display:
+        grid;
+
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+
+    gap:
+        9px;
+
+}
+
+
+
+/* =========================================================
+   CREDIT CARD
+========================================================= */
+
+.credit-card {
+
+    position:
+        relative;
+
+
+    min-height: 118px;
+    padding: 15px 18px;
+
+
+    padding:
+        18px 20px;
+
+
+    overflow:
+        hidden;
+
+
+    border:
+        1px solid
+        rgba(
+            241,
+            238,
+            229,
+            0.13
+        );
+
+
+    background:
+        rgba(
+            20,
+            25,
+            22,
+            0.72
+        );
+
+
+    backdrop-filter:
+        blur(
+            8px
+        );
+
+
+    color:
+        var(--text-main);
+
+
+    font-family:
+        inherit;
+
+
+    text-align:
+        left;
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease;
+
+}
+
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.credit-card:hover {
+
+    transform:
+        translateY(
+            -6px
+        );
+
+
+    border-color:
+        rgba(
+            198,
+            173,
+            125,
+            0.48
+        );
+
+
+    background:
+        rgba(
+            30,
+            36,
+            32,
+            0.90
+        );
+
+}
+
+
+
+/* =========================================================
+   SELECTED
+========================================================= */
+
+.credit-card.active {
+
+    border-color:
+        var(
+            --brand-green-light
+        );
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+
+            rgba(
+                85,
+                126,
+                105,
+                0.18
+            ),
+
+            rgba(
+                18,
+                23,
+                20,
+                0.92
+            )
+        );
+
+
+    box-shadow:
+
+        inset 3px 0 0
+        var(
+            --brand-green-light
+        );
+
+}
+
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.credit-card-number {
+
+    position:
+        absolute;
+
+
+    top:
+        16px;
+
+
+    left:
+        18px;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        9px;
+
+
+    letter-spacing:
+        2px;
+
+
+    color:
+        var(--text-muted);
+
+}
+
+
+
+/* =========================================================
+   BONUS
+========================================================= */
+
+.bonus-tag {
+
+    position:
+        absolute;
+
+
+    top:
+        16px;
+
+
+    right:
+        18px;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        9px;
+
+
+    font-weight:
+        700;
+
+
+    letter-spacing:
+        1.4px;
+
+
+    color:
+        var(--gold);
+
+}
+
+
+
+/* =========================================================
+   CREDIT AMOUNT
+========================================================= */
+
+.credit-amount {
+
+    margin-top:
+        28px;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        baseline;
+
+
+    gap:
+        12px;
+
+}
+
+
+
+.credit-amount span {
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        18px;
+
+
+    color:
+        var(--brand-green-light);
+
+}
+
+
+
+.credit-amount strong {
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        31px;
+
+
+    font-weight:
+        400;
+
+
+    letter-spacing:
+        1px;
+
+}
+
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.credit-price {
+
+    display:
+        block;
+
+
+    margin-top:
+        6px;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        14px;
+
+
+    letter-spacing:
+        0.8px;
+
+
+    color:
+        var(--gold-light);
+
+}
+
+
+
+/* =========================================================
+   SELECTED MARKER
+========================================================= */
+
+.selected-marker {
+
+    position:
+        absolute;
+
+
+    right:
+        18px;
+
+
+    bottom:
+        14px;
+
+
+    opacity:
+        0;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        8px;
+
+
+    font-weight:
+        700;
+
+
+    letter-spacing:
+        2px;
+
+
+    color:
+        var(--brand-green-light);
+
+
+    transform:
+        translateX(
+            7px
+        );
+
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+
+.credit-card.active
+.selected-marker {
+
+    opacity:
+        1;
+
+
+    transform:
+        translateX(
+            0
+        );
+
+}
+
+
+
+/* =========================================================
+   LARGE CREDIT CARD
+========================================================= */
+
+.credit-card-large {
+
+    grid-column:
+        span 2;
+
+
+    min-height:
+        108px;
+
+}
+
+
+
+/* =========================================================
+   PURCHASE SUMMARY
+========================================================= */
+
+.purchase-summary {
+    margin-top: 14px;
+
+    padding: 14px 0 0;
+
+    border-top:
+        1px solid
+        rgba(241, 238, 229, 0.16);
+
+    display: grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+
+/* =========================================================
+   SUMMARY INFO
+========================================================= */
+
+.summary-info > span,
+.summary-price > span {
+
+    display:
+        block;
+
+
+    margin-bottom:
+        5px;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        8px;
+
+
+    letter-spacing:
+        2px;
+
+
+    color:
+        var(--text-muted);
+
+}
+
+
+
+.summary-info strong {
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        17px;
+
+
+    font-weight:
+        500;
+
+}
+
+
+
+.summary-info p {
+
+    margin-top:
+        5px;
+
+
+    color:
+        var(--text-muted);
+
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =========================================================
+   SUMMARY PRICE
+========================================================= */
+
+.summary-price {
+
+    text-align:
+        right;
+
+}
+
+
+
+.summary-price strong {
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        24px;
+
+
+    font-weight:
+        500;
+
+
+    color:
+        var(--gold);
+
+}
+
+
+
+/* =========================================================
+   PURCHASE BUTTON
+========================================================= */
+
+.purchase-button {
+
+    grid-column:
+        1 / -1;
+
+
+    min-height:
+        54px;
+
+
+    margin-top:
+        2px;
+
+
+    padding:
+        0 25px;
+
+
+    border:
+        1px solid
+        rgba(
+            221,
+            205,
+            168,
+            0.55
+        );
+
+
+    background:
+        var(--text-main);
+
+
+    color:
+        #171C19;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        space-between;
+
+
+    cursor:
+        pointer;
+
+
+    font-family:
+        "Oxanium",
+        sans-serif;
+
+
+    font-size:
+        14px;
+
+
+    font-weight:
+        600;
+
+
+    letter-spacing:
+        4px;
+
+
+    clip-path:
+
+        polygon(
+            10px 0,
+
+            100% 0,
+
+            100%
+            calc(
+                100% - 10px
+            ),
+
+            calc(
+                100% - 10px
+            )
+            100%,
+
+            0 100%,
+
+            0 10px
+        );
+
+
+    transition:
+        transform
+        0.3s ease,
+
+        background
+        0.3s ease,
+
+        box-shadow
+        0.3s ease;
+
+}
+
+
+
+.purchase-button:hover {
+
+    transform:
+        translateY(
+            -4px
+        );
+
+
+    background:
+        var(--gold-light);
+
+
+    box-shadow:
+        0 16px 36px
+        rgba(
+            0,
+            0,
+            0,
+            0.32
+        );
+
+}
+
+
+
+.purchase-arrow {
+
+    display:
+        inline-block;
+
+
+    font-size:
+        21px;
+
+
+    transition:
+        transform
+        0.3s ease;
+
+}
+
+
+
+.purchase-button:hover
+.purchase-arrow {
+
+    transform:
+        translateX(
+            6px
+        );
+
+}
+
+
+
+/* =========================================================
+   PURCHASE NOTE
+========================================================= */
+
+.purchase-note {
+
+    margin-top:
+        13px;
+
+
+    color:
+        var(--text-muted);
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        9px;
+
+
+    letter-spacing:
+        1px;
+
+
+    line-height:
+        1.5;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.credits-footer {
+
+    position:
+        absolute;
+
+
+    z-index:
+        10;
+
+
+    left:
+        5%;
+
+
+    right:
+        5%;
+
+
+    bottom:
+        18px;
+
+
+    display:
+        flex;
+
+
+    justify-content:
+        space-between;
+
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+
+    font-size:
+        8px;
+
+
+    letter-spacing:
+        2px;
+
+
+    color:
+        rgba(
+            241,
+            238,
+            229,
+            0.34
+        );
+
+}
+
+
+
+/* =========================================================
+   PAGE ENTRANCE — START STATES
+========================================================= */
+
+.credits-header,
+.credits-visual,
+.purchase-heading,
+.credit-card,
+.purchase-summary,
+.purchase-note,
+.credits-footer {
+
+    opacity:
+        0;
+
+}
+
+
+
+/* HEADER */
+
+.credits-header {
+
+    translate:
+        0 -18px;
+
+
+    transition:
+        opacity
+        0.8s ease,
+
+        translate
+        0.8s ease;
+
+}
+
+
+
+/* LEFT */
+
+.credits-visual {
+
+    translate:
+        -30px 0;
+
+
+    transition:
+        opacity
+        0.9s ease,
+
+        translate
+        0.9s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+
+/* PURCHASE HEADING */
+
+.purchase-heading {
+
+    translate:
+        25px 0;
+
+
+    transition:
+        opacity
+        0.8s ease,
+
+        translate
+        0.8s ease;
+
+}
+
+
+
+/* CREDIT CARDS */
+
+.credit-card {
+
+    opacity:
+        0;
+
+
+    translate:
+        0 22px;
+
+}
+
+
+
+/* PURCHASE SUMMARY */
+
+.purchase-summary {
+
+    translate:
+        0 18px;
+
+
+    transition:
+        opacity
+        0.8s ease,
+
+        translate
+        0.8s ease;
+
+}
+
+
+
+/* =========================================================
+   PAGE READY
+========================================================= */
+
+body.page-ready
+.credits-background {
+
+    opacity:
+        1;
+
+
+    scale:
+        1;
+
+
+    transition:
+        opacity
+        1.25s ease,
+
+        scale
+        1.8s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+
+/* HEADER */
+
+body.page-ready
+.credits-header {
+
+    opacity:
+        1;
+
+
+    translate:
+        0 0;
+
+
+    transition-delay:
+        0.08s;
+
+}
+
+
+
+/* LEFT */
+
+body.page-ready
+.credits-visual {
+
+    opacity:
+        1;
+
+
+    translate:
+        0 0;
+
+
+    transition-delay:
+        0.25s;
+
+}
+
+
+
+/* PURCHASE HEADING */
+
+body.page-ready
+.purchase-heading {
+
+    opacity:
+        1;
+
+
+    translate:
+        0 0;
+
+
+    transition-delay:
+        0.38s;
+
+}
+
+
+
+/* CREDIT CARDS */
+
+body.page-ready
+.credit-card {
+
+    opacity:
+        1;
+
+
+    translate:
+        0 0;
+
+}
+
+
+
+/* CARD 01 */
+
+body.page-ready
+.credit-card:nth-child(1) {
+
+    transition:
+
+        opacity
+        0.7s ease
+        0.52s,
+
+        translate
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        0.52s,
+
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease;
+
+}
+
+
+
+/* CARD 02 */
+
+body.page-ready
+.credit-card:nth-child(2) {
+
+    transition:
+
+        opacity
+        0.7s ease
+        0.62s,
+
+        translate
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        0.62s,
+
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease;
+
+}
+
+
+
+/* CARD 03 */
+
+body.page-ready
+.credit-card:nth-child(3) {
+
+    transition:
+
+        opacity
+        0.7s ease
+        0.72s,
+
+        translate
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        0.72s,
+
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease;
+
+}
+
+
+
+/* CARD 04 */
+
+body.page-ready
+.credit-card:nth-child(4) {
+
+    transition:
+
+        opacity
+        0.7s ease
+        0.82s,
+
+        translate
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        0.82s,
+
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease;
+
+}
+
+
+
+/* CARD 05 */
+
+body.page-ready
+.credit-card:nth-child(5) {
+
+    transition:
+
+        opacity
+        0.7s ease
+        0.92s,
+
+        translate
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        0.92s,
+
+        transform
+        0.35s ease,
+
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease;
+
+}
+
+
+
+/* SUMMARY */
+
+body.page-ready
+.purchase-summary {
+
+    opacity:
+        1;
+
+
+    translate:
+        0 0;
+
+
+    transition-delay:
+        1.03s;
+
+}
+
+
+
+/* NOTE */
+
+body.page-ready
+.purchase-note {
+
+    opacity:
+        1;
+
+
+    transition:
+        opacity
+        0.7s ease
+        1.13s;
+
+}
+
+
+
+/* FOOTER */
+
+body.page-ready
+.credits-footer {
+
+    opacity:
+        1;
+
+
+    transition:
+        opacity
+        0.7s ease
+        1.20s;
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (
+    max-width: 1050px
+) {
+
+    .credits-page {
+
+        grid-template-columns:
+            1fr;
+
+
+        gap:
+            55px;
+
+
+        padding-top:
+            125px;
+
+
+        overflow:
+            visible;
+
+    }
+
+
+    .credits-visual {
+
+        max-width:
+            650px;
+
+    }
+
+
+    .purchase-panel {
+
+        max-width:
+            none;
+
+        justify-self:
+            stretch;
+
+    }
+
+
+    .credits-nav {
+
+        display:
+            none;
+
+    }
+
+
+    .credits-footer {
+
+        position:
+            relative;
+
+
+        left:
+            auto;
+
+
+        right:
+            auto;
+
+
+        bottom:
+            auto;
+
+
+        grid-column:
+            1;
+
+
+        margin-top:
+            40px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (
+    max-width: 650px
+) {
+
+    .credits-header {
+
+        height:
+            75px;
+
+    }
+
+
+    .credits-page {
+
+        padding:
+            105px 6%
+            50px;
+
+    }
+
+
+    .credits-logo {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .credits-back {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .credits-visual h1 {
+
+        font-size:
+            58px;
+
+    }
+
+
+    .credit-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .credit-card-large {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .purchase-summary {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .summary-price {
+
+        text-align:
+            left;
+
+    }
+
+
+    .credits-footer {
+
+        flex-direction:
+            column;
+
+
+        align-items:
+            flex-start;
+
+
+        gap:
+            8px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    .credits-background,
+    .credits-header,
+    .credits-visual,
+    .purchase-heading,
+    .credit-card,
+    .purchase-summary,
+    .purchase-note,
+    .credits-footer {
+
+        opacity:
+            1;
+
+
+        translate:
+            0 0;
+
+
+        scale:
+            1;
+
+
+        transition:
+            none;
+
+    }
+
+}

@@ -243,90 +243,114 @@ heroSectionObserver.observe(heroSection);
 
 const heroes = [
 
+    // =====================================================
+    // 01 — NOVA
+    // =====================================================
+
     {
+        name: "NOVA",
 
-        name:
-            "NOVA",
+        role: "VANGUARD",
 
-        role:
-            "ASSAULT",
+        image: "./image/hero-nova.png",
 
         description:
-            "A mobile assault specialist who manipulates kinetic energy to break defensive lines and reposition during combat.",
+            "A Japanese blade wielder who inherited her family's oath to protect the last human strongholds. She fights on the front line, shielding her younger brother and breaking enemy formations.",
 
         ability1:
-            "IMPULSE",
+            "CRIMSON SEVER",
 
         ability1Description:
-            "Release a directional kinetic burst.",
+            "Launch a fast energy slash through enemies ahead.",
 
         ability2:
-            "PHASE DASH",
+            "MAPLE GUARD",
 
         ability2Description:
-            "Rapidly reposition toward the target direction.",
+            "Raise the blade to reduce incoming damage and empower the next strike.",
+
+        ability3:
+            "OATHFALL",
+
+        ability3Description:
+            "Drive the sword into the ground, releasing a shockwave that launches nearby enemies.",
 
         background:
-            "linear-gradient(160deg, #31363d, #151719 75%)"
-
+            "linear-gradient(160deg, #4a302d, #171413 75%)"
     },
 
 
+    // =====================================================
+    // 02 — VESPER
+    // =====================================================
+
     {
+        name: "VESPER",
 
-        name:
-            "VESPER",
+        role: "INFILTRATOR",
 
-        role:
-            "RECON",
+        image: "./image/hero-vesper.png",
 
         description:
-            "An information warfare operative capable of tracking enemy movement and disrupting battlefield intelligence.",
+            "NOVA's younger brother and a shinobi trained in covert warfare. By combining traditional hand seals with modern combat technology, he hunts targets from the shadows.",
 
         ability1:
-            "SIGNAL TRACE",
+            "SHADOW SEAL",
 
         ability1Description:
-            "Reveal nearby enemy movement signatures.",
+            "Mark an enemy through a hand seal, revealing their position for a short time.",
 
         ability2:
-            "BLACKOUT",
+            "VEIL STEP",
 
         ability2Description:
-            "Temporarily disrupt enemy detection systems.",
+            "Dash rapidly in the target direction and leave behind a deceptive afterimage.",
+
+        ability3:
+            "NIGHTFALL",
+
+        ability3Description:
+            "Enter a silent combat state, increasing mobility and empowering attacks against marked enemies.",
 
         background:
-            "linear-gradient(160deg, #242b33, #0c1117 75%)"
-
+            "linear-gradient(160deg, #20262b, #0c1013 75%)"
     },
 
 
+    // =====================================================
+    // 03 — RONIN
+    // =====================================================
+
     {
+        name: "RONIN",
 
-        name:
-            "RONIN",
+        role: "HEAVY",
 
-        role:
-            "DUELIST",
+        image: "./image/hero-ronin.png",
 
         description:
-            "A close-range combat specialist built for high-risk flanking and aggressive single-target engagements.",
+            "A heavy combat machine created by inventor Elias Ward after autonomous war systems turned against humanity. RONIN was built to protect allied forces and overpower mechanical threats.",
 
         ability1:
-            "EDGE DRIVE",
+            "SIEGE BURST",
 
         ability1Description:
-            "Charge forward with enhanced combat movement.",
+            "Unleash sustained heavy fire that becomes more accurate while continuously attacking.",
 
         ability2:
-            "COUNTER",
+            "AEGIS WALL",
 
         ability2Description:
-            "Prepare a defensive stance against incoming attacks.",
+            "Project a reinforced energy barrier that protects RONIN and nearby allies.",
+
+        ability3:
+            "OVERDRIVE",
+
+        ability3Description:
+            "Overcharge the combat core, enhancing weapons and unleashing a devastating assault barrage.",
 
         background:
-            "linear-gradient(160deg, #3a2728, #120e0f 75%)"
-
+            "linear-gradient(160deg, #303b34, #101513 75%)"
     }
 
 ];
@@ -342,6 +366,9 @@ const heroName =
 const heroRole =
     document.getElementById("heroRole");
 
+const heroImagePhoto =
+    document.getElementById("heroImagePhoto");
+
 const heroDescription =
     document.getElementById(
         "heroDescription"
@@ -350,10 +377,7 @@ const heroDescription =
 const heroImage =
     document.getElementById("heroImage");
 
-const heroImageText =
-    document.getElementById(
-        "heroImageText"
-    );
+
 
 
 const ability1Name =
@@ -376,6 +400,15 @@ const ability2Description =
         "ability2Description"
     );
 
+const ability3Name =
+    document.getElementById(
+        "ability3Name"
+    );
+
+const ability3Description =
+    document.getElementById(
+        "ability3Description"
+    );
 
 const heroInformation =
     document.querySelector(
@@ -429,19 +462,12 @@ heroButtons.forEach(button => {
 
 function switchHero(index) {
 
-    /*
-        OLD HERO EXIT
-
-        LEFT IMAGE → LEFT
-        RIGHT TEXT → RIGHT
-    */
-
+    // Old hero leaves
     heroImage.style.transform =
         "translateX(-100px)";
 
     heroImage.style.opacity =
         "0";
-
 
     heroInformation.style.transform =
         "translateX(100px)";
@@ -456,15 +482,18 @@ function switchHero(index) {
             heroes[index];
 
 
-        /*
-            CHANGE CONTENT
-        */
-
+        // Change hero content
         heroName.textContent =
             hero.name;
 
         heroRole.textContent =
             hero.role;
+
+        heroImagePhoto.src =
+            hero.image;
+
+        heroImagePhoto.alt =
+            hero.name;
 
         heroDescription.textContent =
             hero.description;
@@ -483,22 +512,19 @@ function switchHero(index) {
         ability2Description.textContent =
             hero.ability2Description;
 
+        ability3Name.textContent =
+            hero.ability3;
 
-        heroImageText.textContent =
-            hero.name;
-
+        ability3Description.textContent =
+            hero.ability3Description;
 
         heroImage.style.background =
             hero.background;
 
 
-        /*
-            NEW HERO START POSITION
-        */
-
+        // New hero starting position
         heroImage.style.transform =
             "translateX(100px)";
-
 
         heroInformation.style.transform =
             "translateX(-100px)";
@@ -506,16 +532,11 @@ function switchHero(index) {
 
         requestAnimationFrame(() => {
 
-            /*
-                NEW HERO ENTER
-            */
-
             heroImage.style.opacity =
                 "1";
 
             heroImage.style.transform =
                 "translateX(0)";
-
 
             heroInformation.style.opacity =
                 "1";
@@ -525,9 +546,7 @@ function switchHero(index) {
 
         });
 
-
     }, 380);
-
 }
 
 
