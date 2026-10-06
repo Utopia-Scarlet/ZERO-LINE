@@ -221,7 +221,7 @@ const heroes = [
 
         role: "VANGUARD",
 
-        image: "./image/hero-nova.png",
+        image: "https://ik.imagekit.io/utopia0426/ZERO-LINE/ChatGPT%20Image%2021%20Sept%202026,%2014_48_21.png?tr=w-1000,q-85,f-auto",
 
         description:
             "A Japanese blade wielder who inherited her family's oath to protect the last human strongholds. She fights on the front line, shielding her younger brother and breaking enemy formations.",
@@ -258,7 +258,7 @@ const heroes = [
 
         role: "INFILTRATOR",
 
-        image: "./image/hero-vesper.png",
+        image: "https://ik.imagekit.io/utopia0426/ZERO-LINE/ChatGPT%20Image%2021%20Sept%202026,%2014_48_28.png?updatedAt=1791279149507?tr=w-1000,q-85,f-auto",
 
         description:
             "NOVA's younger brother and a shinobi trained in covert warfare. By combining traditional hand seals with modern combat technology, he hunts targets from the shadows.",
@@ -295,7 +295,7 @@ const heroes = [
 
         role: "HEAVY",
 
-        image: "./image/hero-ronin.png",
+        image: "https://ik.imagekit.io/utopia0426/ZERO-LINE/ChatGPT%20Image%2021%20Sept%202026,%2014_48_33.png?updatedAt=1791279149828?tr=w-1000,q-85,f-auto",
 
         description:
             "A heavy combat machine created by inventor Elias Ward after autonomous war systems turned against humanity. RONIN was built to protect allied forces and overpower mechanical threats.",
