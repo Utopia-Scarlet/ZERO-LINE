@@ -936,3 +936,50 @@ setTimeout(
 );
 
 
+
+/* Background music only starts after an explicit click or keyboard activation. */
+(() => {
+    const audio = document.getElementById("backgroundMusic");
+    const buttons = document.querySelectorAll(".music-toggle");
+    const status = document.getElementById("musicStatus");
+    let pending = false;
+    audio.volume = 0.25;
+
+    function syncMusic() {
+        const playing = !audio.paused;
+        buttons.forEach(button => {
+            button.setAttribute("aria-pressed", String(playing));
+            button.title = playing ? "Pause background music" : "Play background music";
+            button.setAttribute("aria-busy", String(pending));
+        });
+    }
+    buttons.forEach(button => button.addEventListener("click", async () => {
+        if (pending) return;
+        if (!audio.paused) {
+            audio.pause();
+            status.textContent = "Background music paused.";
+            return;
+        }
+        pending = true;
+        syncMusic();
+        try {
+            await audio.play();
+            status.textContent = "Background music playing.";
+        } catch {
+            status.textContent = "Music could not play. Please try again.";
+        } finally {
+            pending = false;
+            syncMusic();
+        }
+    }));
+    audio.addEventListener("play", syncMusic);
+    audio.addEventListener("pause", syncMusic);
+    audio.addEventListener("error", () => {
+        audio.pause();
+        pending = false;
+        syncMusic();
+        status.textContent = "Music could not load. Please try again.";
+    });
+    window.addEventListener("pagehide", () => audio.pause());
+    syncMusic();
+})();
